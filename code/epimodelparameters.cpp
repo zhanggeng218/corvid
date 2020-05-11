@@ -535,7 +535,7 @@ bool EpiModelParameters::readConfigFile(const char *configname) {
 		cerr << "WARNING: Vaccine efficacy is not defined on day " << i << " for vaccine " << nID << "." << endl;
 	      }
 	    }
-	} else if (!param.compare("")==0) {
+	} else if (!(param.compare("")==0)) {
 	    cerr << "WARNING: " << param << " is not a valid parameter" << endl;
 	    exit(-1); // we should quit if there is a bad parameter
 	}

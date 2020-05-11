@@ -29,7 +29,7 @@ R0corvid: $(OBJS) Makefile R0model.o R0model.h
 	$(CPP) $(CFLAGS) $(OPTI) $(INCLUDES) $(DEFINES) -c $<
 
 dSFMT19937.o: dSFMT.c dSFMT.h dSFMT-params19937.h Makefile
-	$(CC) $(CFLAGS) $(OPTI)  -std=c99 --param max-inline-insns-single=1800 -fno-strict-aliasing -Wmissing-prototypes -msse2 -DHAVE_SSE2 -DNDEBUG $(INCLUDES) $(DEFINES) -c dSFMT.c -o dSFMT19937.o
+	$(CC) $(CFLAGS) $(OPTI)  -std=c99 -fno-strict-aliasing -Wmissing-prototypes -msse2 -DHAVE_SSE2 -DNDEBUG $(INCLUDES) $(DEFINES) -c dSFMT.c -o dSFMT19937.o
 
 bnldev.o: bnldev.c bnldev.h Makefile
 	$(CC) $(CFLAGS) $(OPTI) $(INCLUDES) $(DEFINES) -c bnldev.c -o bnldev.o

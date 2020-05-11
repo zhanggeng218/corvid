@@ -14,7 +14,8 @@ extern "C" {
 #include "params.h"
 #include "epimodel.h"
 #include "epimodelparameters.h"
-#include <malloc.h> 
+// #include <malloc.h> 
+#include "stdlib.h"
 
 using namespace std;
 
@@ -503,7 +504,7 @@ void EpiModel::read_workflow(void)
       }
     }
   }
-  delete flow;
+  delete[] flow;
 
   // compute number of work groups per community
   for (vector< Community >::iterator it = commvec.begin(); 
